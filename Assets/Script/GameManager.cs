@@ -5,9 +5,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Text txtTime;
     public bool isGameOver { get; private set; } = false;
     public Transform spawnLocation;
-    
+    float timer;
     float spawnInterval = 0.8f;
     //permet de savoir si le jeu est en pause ou non
    
@@ -24,7 +25,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        // debuter le timer
+        timer += 1;
+        // calculer le temps en minutes:secondes
+        txtTime.text = string.Format("{0:0}:{1:00}", Mathf.Floor(timer / 60), Mathf.Floor(timer) % 60);
     }
     public void TogglePause()
     {
