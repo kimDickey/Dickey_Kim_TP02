@@ -27,5 +27,8 @@ public class NightShade_Nav : MonoBehaviour
             isFloating = false;
     }
 
-    
+    private object NavMeshHit()
+    {
+        throw new System.NotImplementedException();
+    }
 }
