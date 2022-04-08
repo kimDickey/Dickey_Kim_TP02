@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class turret : MonoBehaviour
 {
+    
     float range;
     int domage;
     int turretIndex;
@@ -11,6 +12,7 @@ public abstract class turret : MonoBehaviour
     public float rotationSpeed;
     public float vitesseDeTir;
     public Transform target;
+    Vector3 cible;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,10 @@ public abstract class turret : MonoBehaviour
     {
         
     }
-    abstract void Shoot();
+    void RotationSurEnnemi()
+    {
+
+    }
+
+    protected abstract void Shoot();
 }

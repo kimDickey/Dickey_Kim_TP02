@@ -5,7 +5,7 @@ using UnityEngine;
 public class turretPlacement : MonoBehaviour
 {
     public bool uiIsOpen = false;
-    private object turretBuyMenu;
+    public GameObject turretBuyMenu;
     
     void Start()
     {
