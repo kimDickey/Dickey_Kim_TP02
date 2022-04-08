@@ -22,4 +22,5 @@ public abstract class turret : MonoBehaviour
     {
         
     }
+    abstract void Shoot();
 }

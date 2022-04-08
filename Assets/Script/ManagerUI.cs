@@ -44,6 +44,7 @@ public class ManagerUI : MonoBehaviour
         TimeSpan timer = TimeSpan.FromSeconds(timerDebut);
         // calculer le temps en minutes:secondes
         txtTime.text = timer.ToString(@"mm\:ss\:ff");
+        Debug.Log(timer.ToString(@"mm\:ss\:ff"));
     }
     void PauseTime()
     {

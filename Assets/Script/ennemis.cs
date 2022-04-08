@@ -7,6 +7,8 @@ public class ennemis : MonoBehaviour
     NavMeshAgent agent;
     public GameObject prefabEnnemi1;
     int hitpoints;
+    int sante;
+    int argent;
     // Start is called before the first frame update
     void Start()
     {

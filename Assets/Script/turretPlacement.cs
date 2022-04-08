@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class turretPlacement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool uiIsOpen = false;
+    private object turretBuyMenu;
+    
     void Start()
     {
         
@@ -14,5 +16,29 @@ public class turretPlacement : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnMouseDown()
+    {
+        if (!ManagerUI.uiIsOpen)
+        {
+            turretBuyMenu.SetActive(true);
+            ManagerUI.uiIsOpen = true;
+        }
+    }
+    void EnleverOr()
+    {
+
+    }
+    void PlacerTurret()
+    {
+
+    }
+    void ActiverUI()
+    {
+
+    }
+    void EnleverTurret()
+    {
+
     }
 }

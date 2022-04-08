@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class turretPlacementUI : MonoBehaviour
 {
-    public bool uiIsOpen = false;
-    private object turretBuyMenu;
+    public Button btnGun;
+    public Button btnBomb;
+    public Button btnFreeze;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,30 +21,19 @@ public class turretPlacementUI : MonoBehaviour
     {
         
     }
-    void OnMouseDown()
-    {
-        if (!ManagerUI.uiIsOpen)
-        {
-            turretBuyMenu.SetActive(true);
-            ManagerUI.uiIsOpen = true;
-        }
-    }
-    void EnleverOr()
+    void ActiverGun()
     {
 
     }
-    void PlacerTurret()
+    void ActiverBomb()
     {
 
     }
-    void ActiverUI()
+    void ActiverFreeze()
     {
 
     }
-    void EnleverTurret()
-    {
-
-    }
+   
 
 
 }
