@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
@@ -9,33 +10,51 @@ public class GameManager : MonoBehaviour
     public bool isGameOver { get; private set; } = false;
     public Transform spawnLocation;
     public GameObject prefabEnnemi1;
-    float timer;
+    int timer;
+    float timerDebut;
     float spawnInterval = 0.8f;
     public GameObject txtGameOver;
+    public Button btnPause;
+    public Button btnPlay;
     //permet de savoir si le jeu est en pause ou non
 
-
+    public bool isPaused = false;
 
 
     // const float gameDuration = ;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(TogglePause);
+        // temps du timer départ
+        timerDebut = 0;
+        //
+        btnPause.onClick.AddListener(PauseTime);
+        btnPlay.onClick.AddListener(ResumePartie);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
         // debuter le timer
-        timer += 1;
+        timerDebut = timerDebut + Time.deltaTime;
+        TimeSpan timer = TimeSpan.FromSeconds(timerDebut);
         // calculer le temps en minutes:secondes
-        txtTime.text = string.Format("{0:0}:{1:00}", Mathf.Floor(timer / 60), Mathf.Floor(timer) % 60);
+        txtTime.text = timer.ToString(@"mm\:ss\:ff");
     }
-    public void TogglePause()
+    
+    void PauseTime()
     {
         // vérifier si le temps est en pause ou non
-        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+        Time.timeScale = 0f;
+        isPaused = true;
+
+    }
+
+    void ResumePartie()
+    {
+        Time.timeScale = 1f;
+        isPaused = false; 
     }
     // Fin de la partie
     public void GameOver()
