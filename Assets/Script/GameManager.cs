@@ -16,9 +16,10 @@ public class GameManager : MonoBehaviour
     public GameObject txtGameOver;
     public Button btnPause;
     public Button btnPlay;
-    //permet de savoir si le jeu est en pause ou non
-
+    
+    public Text txtPointDeVie;
     public bool isPaused = false;
+    int nbVie = 5;
 
 
     // const float gameDuration = ;
@@ -55,6 +56,17 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false; 
+    }
+
+    public void PointDeViePerdu()
+    {
+        nbVie -= 1;
+        txtPointDeVie.text = nbVie.ToString();
+        if( nbVie == 0)
+        {
+            GameOver();
+        }
+
     }
     // Fin de la partie
     public void GameOver()
