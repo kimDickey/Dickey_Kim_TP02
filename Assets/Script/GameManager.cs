@@ -8,14 +8,16 @@ public class GameManager : MonoBehaviour
     public Text txtTime;
     public bool isGameOver { get; private set; } = false;
     public Transform spawnLocation;
+    public GameObject prefabEnnemi1;
     float timer;
     float spawnInterval = 0.8f;
+    public GameObject txtGameOver;
     //permet de savoir si le jeu est en pause ou non
-   
 
 
 
-// const float gameDuration = ;
+
+    // const float gameDuration = ;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,5 +37,12 @@ public class GameManager : MonoBehaviour
         // vérifier si le temps est en pause ou non
         Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
     }
-    
+    // Fin de la partie
+    public void GameOver()
+    {
+        isGameOver = true;
+        txtGameOver.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
 }
