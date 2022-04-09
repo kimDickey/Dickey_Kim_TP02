@@ -38,14 +38,14 @@ public class turretPlacement : MonoBehaviour
 
 		if (turret != null)
 		{
-			buildManager.SelectNode(this);
+			//buildManager.SelectTurret(this);
 			return;
 		}
 
 		if (!buildManager.CanBuild)
 			return;
 
-		Cons(buildManager.GetTurretToBuild());
+		//Cons(buildManager.GetTurretToBuild());
 	}
 
 	void ConstruireTurret()
@@ -58,8 +58,8 @@ public class turretPlacement : MonoBehaviour
 
 		Player.argent -= cost;
 
-		GameObject _turret = (GameObject)Instantiate(TurretBomb.prefab, GetBuildPosition(), Quaternion.identity);
-		turret = _turret;
+		//GameObject _turret = (GameObject)Instantiate(TurretBomb.prefab, GetBuildPosition(), Quaternion.identity);
+		//turret = _turret;
 
 
 

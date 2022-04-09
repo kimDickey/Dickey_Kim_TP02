@@ -51,7 +51,7 @@ public class projectile : MonoBehaviour
 		}
 		else
 		{
-			Damage(target);
+			//Damage(target);
 		}
 
 		Destroy(gameObject);
@@ -64,18 +64,18 @@ public class projectile : MonoBehaviour
 		{
 			if (collider.tag == "ennemis")
 			{
-				Damage(collider.transform);
+				//Damage(collider.transform);
 			}
 		}
 	}
 
 	void Damage()
 	{
-		Ennemies e = Ennemies.GetComponent<ennemis>();
+		//Ennemies e = Ennemies.GetComponent<ennemis>();
 
-		if (e != null)
+		//if (e != null)
 		{
-			e.TakeDamage(damage);
+			//e.TakeDamage(damage);
 		}
 	}
 

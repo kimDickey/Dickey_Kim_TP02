@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class turretPlacementUI : MonoBehaviour
 {
     public GameObject ui;
+    
     public Button btnGun;
     public Button btnBomb;
     public Button btnFreeze;
@@ -35,14 +36,27 @@ public class turretPlacementUI : MonoBehaviour
     {
 
     }
-	public static  UIManager instance;
+    public void SetTarget()
+    {
+        //target = _target;
+
+        //transform.position = _target.GetBuildPosition();
+
+    
+
+       // sellAmount.text = "$" + target.turretBlueprint.GetSellAmount();
+
+        ui.SetActive(true);
+    }
+
+    public static  UIManager instance;
     public void Hide()
     {
         ui.SetActive(false);
     }
     public void Vendre()
     {
-        target.SellTurret();
+        //target.SellTurret();
         BuildManager.instance.DeselectNode();
     }
 

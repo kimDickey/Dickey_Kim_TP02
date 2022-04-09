@@ -24,7 +24,7 @@ public class BuildManager : MonoBehaviour
 	public turretPlacement turretPlacement;
 
 	public bool CanBuild { get { return turretToBuild != null; } }
-	public bool HasMoney { get { return Player.argent >= turretToBuild.cost; } }
+	//public bool HasMoney { get { return Player.argent >= turretToBuild.cost; } }
 
     public turretPlacement SelectturretPlacement { get; private set; }
     public object turretToBuild { get; private set; }
@@ -37,26 +37,26 @@ public class BuildManager : MonoBehaviour
 			return;
 		}
 
-		SelectturretPlacement = node;
+		//SelectturretPlacement = node;
 		turretToBuild = null;
 
-		turretPlacementUI.SetTarget(node);
+		//turretPlacementUI.SetTarget(node);
 	}
 
 	public void DeselectNode()
 	{
-		selectedNode = null;
+		//selectedNode = null;
 		turretPlacementUI.Hide();
 	}
 
 	public void SelectTurretToBuild()
 	{
-		turretToBuild = turret;
+		//turretToBuild = turret;
 		DeselectNode();
 	}
 
 	public  turretPlacement GetTurretToBuild()
 	{
-		return turretToBuild;
+		//return turretToBuild;
 	}
 }

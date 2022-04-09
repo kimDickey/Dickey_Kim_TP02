@@ -13,14 +13,14 @@ public class UIManager : MonoBehaviour
     public GameObject prefabEnnemi1;
     int timer;
     float timerDebut;
-    //float spawnInterval = 0.8f;
+    
     public GameObject txtGameOver;
     public Button btnPause;
     public Button btnPlay;
 
     public Text txtPointDeVie;
     public bool isPaused = false;
-    public int argent = 500;
+   
     int nbVie = 5;
     public static bool uiIsOpen;
     public Text txtargent;
@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
         txtTime.text = timer.ToString(@"mm\:ss\:ff");
         Debug.Log(timer.ToString(@"mm\:ss\:ff"));
         // afficher l'argent fait dans le text
-        txtargent.text = argent.ToString() + "$";
+        //txtargent.text = .ToString() + "$";
     }
     void PauseTime()
     {
