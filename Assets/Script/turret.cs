@@ -5,18 +5,22 @@ using UnityEngine;
 public abstract class turret : MonoBehaviour
 {
     
-    float range;
-    int domage;
+    float range = 25.0f;
+    float dommage = 30f;
     int turretIndex;
-    public int cost;
-    public float rotationSpeed;
-    public float vitesseDeTir;
+    
+    public Transform rotationSpeed;
+    public float vitesseDeTir = 950.0f;
     public Transform target;
     Vector3 cible;
+    public int coutBomb = 300;
+    public int coutGun = 150;
+    public int coutFreeze = 275;
     // Start is called before the first frame update
     void Start()
     {
-        
+        float random = Random.Range(1.0f, 2.0f);
+
     }
 
     // Update is called once per frame
@@ -26,7 +30,17 @@ public abstract class turret : MonoBehaviour
     }
     void RotationSurEnnemi()
     {
+        Vector3 position = target.position - rotationSpeed.transform.position;
+        Vector3 rotation = Quaternion.LookRotation(position).eulerAngles;
+        rotationSpeed.transform.localEulerAngles = new Vector3(0, 0, rotation.y);
+        transform.localEulerAngles = new Vector3(-90, 0, transform.localEulerAngles.z);
+    }
 
+    void dommage()
+    {
+        float dommageTour = Random.Range(10f, 15f);
+        if 
+        dommageTour - dommage 
     }
 
     protected abstract void Shoot();

@@ -20,8 +20,10 @@ public class ManagerUI : MonoBehaviour
 
     public Text txtPointDeVie;
     public bool isPaused = false;
+    public int argent = 500;
     int nbVie = 5;
     public static bool uiIsOpen;
+    public Text txtargent;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,8 @@ public class ManagerUI : MonoBehaviour
         // calculer le temps en minutes:secondes
         txtTime.text = timer.ToString(@"mm\:ss\:ff");
         Debug.Log(timer.ToString(@"mm\:ss\:ff"));
+        // afficher l'argent fait dans le text
+        txtargent.text = argent.ToString() + "$";
     }
     void PauseTime()
     {

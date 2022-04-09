@@ -33,6 +33,7 @@ public class ennemis : MonoBehaviour
     }
     public void Die()
     {
+
         CancelInvoke("UpdateDestination");
         Destroy(gameObject);
     }

@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class turret_freeze : turret
 {
-    protected override void Shoot()
-    {
-        throw new System.NotImplementedException();
-    }
 
+    int cout = 275;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +14,10 @@ public class turret_freeze : turret
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+    protected override void Shoot()
     {
         
     }

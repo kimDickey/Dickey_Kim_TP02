@@ -8,7 +8,7 @@ public class NightShade_Nav : MonoBehaviour
     Animator animatorNightShade;
     NavMeshAgent agent;
     public bool isFloating;
-    
+    NavMeshHit hit;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class NightShade_Nav : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var navArea = NavMeshHit();
+        var navArea= NavMeshHit();
         agent.SamplePathPosition(-1, 0.0f, out navArea);
         if (navArea.mask != 1)
             isFloating = true;
