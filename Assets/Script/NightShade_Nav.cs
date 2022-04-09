@@ -5,7 +5,7 @@ using UnityEngine.Animations;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-public class NightShade_Nav : MonoBehaviour
+public class NightShade_Nav : ennemis
 {
     Animator animatorNightShade;
     NavMeshAgent agent;
@@ -20,8 +20,7 @@ public class NightShade_Nav : MonoBehaviour
     float amount;
      int valeur = 200;
 
-    // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         speed = Startspeed;
         sante = santeDepart;
@@ -48,7 +47,7 @@ public class NightShade_Nav : MonoBehaviour
         throw new System.NotImplementedException();
     }
 
-    void Die()
+     void Die()
     {
         isDead = true;
         Player.argent += valeur;

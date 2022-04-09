@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - turret
+  - ennemietag
   layers:
   - Default
   - TransparentFX

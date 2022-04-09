@@ -8,7 +8,6 @@ public abstract class turret : MonoBehaviour
     float range = 25.0f;
     float dommages = 30f;
     int turretIndex;
-    
     public Transform rotationSpeed;
     public float vitesseDeTir = 950.0f;
     public Transform target;
@@ -16,6 +15,8 @@ public abstract class turret : MonoBehaviour
     public int coutBomb = 300;
     public int coutGun = 150;
     public int coutFreeze = 275;
+    private ennemis targetEnemy;
+    public string ennemiesTag = "ennemies";
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,31 @@ public abstract class turret : MonoBehaviour
     void Update()
     {
         
+    }
+    void UpdateDistance()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(ennemiesTag);
+        float shortestDistance = Mathf.Infinity;
+        GameObject nearestEnemy = null;
+        foreach (GameObject enemy in enemies)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy;
+            }
+        }
+
+        if (nearestEnemy != null && shortestDistance <= range)
+        {
+            target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<ennemis>();
+        }
+        else
+        {
+            target = null;
+        }
     }
     void RotationSurEnnemi()
     {

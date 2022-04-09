@@ -1,26 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using UnityEngine.UI;
+using System;
 
-public class UIManager : MonoBehaviour
+public class ManagerUI : MonoBehaviour
 {
-    public static UIManager instance;
+    public static ManagerUI instance;
     public Text txtTime;
     public bool isGameOver { get; private set; } = false;
     public Transform spawnLocation;
     public GameObject prefabEnnemi1;
     int timer;
     float timerDebut;
-    
+
     public GameObject txtGameOver;
     public Button btnPause;
     public Button btnPlay;
 
     public Text txtPointDeVie;
     public bool isPaused = false;
-   
+    
     int nbVie = 5;
     public static bool uiIsOpen;
     public Text txtargent;
@@ -49,6 +49,7 @@ public class UIManager : MonoBehaviour
         Debug.Log(timer.ToString(@"mm\:ss\:ff"));
         // afficher l'argent fait dans le text
         //txtargent.text = .ToString() + "$";
+        txtPointDeVie.text = nbVie.ToString();
     }
     void PauseTime()
     {
@@ -69,7 +70,7 @@ public class UIManager : MonoBehaviour
     {
         // point de vie
         nbVie -= 1;
-        txtPointDeVie.text = nbVie.ToString();
+        
         // si le nombre de point est égale 0 la partie est terminer
         if (nbVie == 0)
         {

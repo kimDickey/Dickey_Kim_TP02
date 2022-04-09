@@ -11,7 +11,7 @@ public class WaveSpanner : MonoBehaviour
     private int waveIndex = 0;
     public Text txtNbVague;
     private float decompte = 2f;
-    public UIManager manager;
+    public ManagerUI manager;
     public Wave[] waves;
     private object spawnPoint;
 

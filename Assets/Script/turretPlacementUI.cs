@@ -44,12 +44,11 @@ public class turretPlacementUI : MonoBehaviour
 
     
 
-       // sellAmount.text = "$" + target.turretBlueprint.GetSellAmount();
-
+       
         ui.SetActive(true);
     }
 
-    public static  UIManager instance;
+   
     public void Hide()
     {
         ui.SetActive(false);

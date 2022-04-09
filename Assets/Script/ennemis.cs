@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class ennemis : MonoBehaviour
+public abstract class ennemis : MonoBehaviour
 {
     NavMeshAgent agent;
     public GameObject prefabEnnemi1;
@@ -12,7 +12,7 @@ public class ennemis : MonoBehaviour
    
     
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         Vector3 newDestination = new Vector3(16.4f, 0f, -52.8f);
@@ -31,7 +31,7 @@ public class ennemis : MonoBehaviour
         if (sante < 1)
             Die();
     }
-    public void Die()
+     public  virtual void Die()
     {
 
         CancelInvoke("UpdateDestination");
