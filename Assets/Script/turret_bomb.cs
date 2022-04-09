@@ -5,7 +5,7 @@ using UnityEngine;
 public class turret_bomb : turret
 {
     public GameObject projectilBalle;
-    public int coutBomb = 300;
+    
     
     // Start is called before the first frame update
     void Start()

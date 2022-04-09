@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
+using System;
 using UnityEngine.UI;
-public class ManagerUI : MonoBehaviour
-{
 
-    public static ManagerUI instance;
+public class UIManager : MonoBehaviour
+{
+    public static UIManager instance;
     public Text txtTime;
     public bool isGameOver { get; private set; } = false;
     public Transform spawnLocation;
     public GameObject prefabEnnemi1;
     int timer;
     float timerDebut;
-    float spawnInterval = 0.8f;
+    //float spawnInterval = 0.8f;
     public GameObject txtGameOver;
     public Button btnPause;
     public Button btnPlay;

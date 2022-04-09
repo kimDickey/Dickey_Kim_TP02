@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class turretPlacementUI : MonoBehaviour
 {
+    public GameObject ui;
     public Button btnGun;
     public Button btnBomb;
     public Button btnFreeze;
@@ -34,9 +35,17 @@ public class turretPlacementUI : MonoBehaviour
     {
 
     }
-	public static  ManagerUI instance;
+	public static  UIManager instance;
+    public void Hide()
+    {
+        ui.SetActive(false);
+    }
+    public void Vendre()
+    {
+        target.SellTurret();
+        BuildManager.instance.DeselectNode();
+    }
 
-	
 }
 
    

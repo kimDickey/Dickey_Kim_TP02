@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class BuildManager : MonoBehaviour
 {
-	public static BuildManager instance;
+    public static BuildManager instance;
 
 	void Awake()
 	{
@@ -19,32 +19,34 @@ public class BuildManager : MonoBehaviour
 	public GameObject buildEffect;
 	public GameObject sellEffect;
 
-	private TurretPlacement turretPlacement;
-	private Node selectedNode;
-
-	public NodeUI nodeUI;
+	
+	public turretPlacementUI turretPlacementUI;
+	public turretPlacement turretPlacement;
 
 	public bool CanBuild { get { return turretToBuild != null; } }
 	public bool HasMoney { get { return Player.argent >= turretToBuild.cost; } }
 
-	public void SelectNode(Node node)
+    public turretPlacement SelectturretPlacement { get; private set; }
+    public object turretToBuild { get; private set; }
+
+    public void SelectTurret()
 	{
-		if (selectedNode == node)
+		if (SelectturretPlacement == turretPlacement)
 		{
 			DeselectNode();
 			return;
 		}
 
-		selectedNode = node;
+		SelectturretPlacement = node;
 		turretToBuild = null;
 
-		nodeUI.SetTarget(node);
+		turretPlacementUI.SetTarget(node);
 	}
 
 	public void DeselectNode()
 	{
 		selectedNode = null;
-		nodeUI.Hide();
+		turretPlacementUI.Hide();
 	}
 
 	public void SelectTurretToBuild()
@@ -53,5 +55,8 @@ public class BuildManager : MonoBehaviour
 		DeselectNode();
 	}
 
-	
-
+	public  turretPlacement GetTurretToBuild()
+	{
+		return turretToBuild;
+	}
+}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class turret_freeze : turret
 {
 
-    int cout = 275;
+    
     // Start is called before the first frame update
     void Start()
     {

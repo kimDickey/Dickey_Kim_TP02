@@ -6,7 +6,7 @@ public abstract class turret : MonoBehaviour
 {
     
     float range = 25.0f;
-    float dommage = 30f;
+    float dommages = 30f;
     int turretIndex;
     
     public Transform rotationSpeed;
@@ -39,8 +39,7 @@ public abstract class turret : MonoBehaviour
     void dommage()
     {
         float dommageTour = Random.Range(10f, 15f);
-        if 
-        dommageTour - dommage 
+       
     }
 
     protected abstract void Shoot();

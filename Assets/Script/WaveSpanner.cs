@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class WaveSpanner : MonoBehaviour
 {
     public static int EnnemiesEnVie = 0;
-    public GameObject enemy;
+    public GameObject ennemie;
     public float tempsAvantWave = 5f;
     private int waveIndex = 0;
     public Text txtNbVague;
     private float decompte = 2f;
-    public ManagerUI manager;
+    public UIManager manager;
     public Wave[] waves;
- 
- 
+    private object spawnPoint;
+
     void Update()
     {
         // si les ennemies sont encore en vie continuer la vague
@@ -48,7 +48,7 @@ public class WaveSpanner : MonoBehaviour
         
         for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnnemies(wave.enemy);
+            SpawnEnnemies(wave.ennemie);
             // temps avant la seconde vague
             yield return new WaitForSeconds(1f / wave.rate);
         }
@@ -57,9 +57,9 @@ public class WaveSpanner : MonoBehaviour
 
 
     }
-    void SpawnEnnemies()
+    void SpawnEnnemies(GameObject ennemie)
     {
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+       
     }
 }
    

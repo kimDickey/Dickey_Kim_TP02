@@ -10,7 +10,7 @@ public class turretPlacement : MonoBehaviour
 	public GameObject prefabTurretBomb;
 	public GameObject prefabTurretGun;
 	public GameObject prefabTurretFreeze;
-	public Button btnGun;
+	
 
 	BuildManager buildManager;
 
