@@ -5,58 +5,46 @@ using System;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
+    public turretPlacementUI turretPlacementUI;
+    public turretPlacement turretPlacement;
+    public bool coutAchat { get { return turretToBuild != null; } }
+    //public bool AvoirArgent { get { return Player.argent >= turretToBuild.cost; } }
 
-	void Awake()
-	{
-		if (instance != null)
-		{
-			Debug.LogError("More than one BuildManager in scene!");
-			return;
-		}
-		instance = this;
-	}
+    void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
+    }
 
-	public GameObject buildEffect;
-	public GameObject sellEffect;
+    
 
-	
-	public turretPlacementUI turretPlacementUI;
-	public turretPlacement turretPlacement;
 
-	public bool CanBuild { get { return turretToBuild != null; } }
-	//public bool HasMoney { get { return Player.argent >= turretToBuild.cost; } }
+    
 
     public turretPlacement SelectturretPlacement { get; private set; }
     public object turretToBuild { get; private set; }
 
     public void SelectTurret()
-	{
-		if (SelectturretPlacement == turretPlacement)
-		{
-			DeselectNode();
-			return;
-		}
+    {
+        if (SelectturretPlacement == turretPlacement)
+        {
+            DeselectNode();
+            return;
+        }
 
-		//SelectturretPlacement = node;
-		turretToBuild = null;
 
-		//turretPlacementUI.SetTarget(node);
-	}
+        turretToBuild = null;
 
-	public void DeselectNode()
-	{
-		//selectedNode = null;
-		turretPlacementUI.Hide();
-	}
 
-	public void SelectTurretToBuild()
-	{
-		//turretToBuild = turret;
-		DeselectNode();
-	}
+    }
+        public void DeselectNode()
+        {
+            //selectedNode = null;
+            turretPlacementUI.Hide();
+        }
 
-	//public  turretPlacement GetTurretToBuild()
-	//{
-		//return turretToBuild;
-	//}
-}
+   }
+

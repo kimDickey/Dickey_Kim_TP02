@@ -42,10 +42,9 @@ public class turretPlacement : MonoBehaviour
 			return;
 		}
 
-		if (!buildManager.CanBuild)
+		//if (!buildManager.CanBuild)
 			return;
 
-		//Cons(buildManager.GetTurretToBuild());
 	}
 
 	void ConstruireTurret()
@@ -58,8 +57,7 @@ public class turretPlacement : MonoBehaviour
 
 		Player.argent -= cost;
 
-		//GameObject _turret = (GameObject)Instantiate(TurretBomb.prefab, GetBuildPosition(), Quaternion.identity);
-		//turret = _turret;
+		
 
 
 
@@ -71,10 +69,7 @@ public class turretPlacement : MonoBehaviour
 	{
 		Player.argent += Vente();
 
-		GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
-		Destroy(effect, 5f);
-		Destroy(turret);
-
+	
 	}
 
 	void ActiverBomb()

@@ -38,10 +38,7 @@ public class turretPlacementUI : MonoBehaviour
     }
     public void SetTarget()
     {
-        //target = _target;
-
-        //transform.position = _target.GetBuildPosition();
-
+       
     
 
        
@@ -55,7 +52,9 @@ public class turretPlacementUI : MonoBehaviour
     }
     public void Vendre()
     {
-        //target.SellTurret();
+       //vendre le batiment selectionner
+
+        
         BuildManager.instance.DeselectNode();
     }
 

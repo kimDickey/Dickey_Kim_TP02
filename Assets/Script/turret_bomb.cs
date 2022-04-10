@@ -5,6 +5,7 @@ using UnityEngine;
 public class turret_bomb : turret
 {
     public GameObject projectilBalle;
+
     
     
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class turret_bomb : turret
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
     protected override void Shoot()
     {
@@ -33,7 +34,7 @@ public class turret_bomb : turret
         foreach (var item in colliders)
         {
             if (item.name.Contains("ennemis"))
-                item.GetComponent<ennemis>().Die();
+                item.GetComponent<Ennemis1>().Die();
         }
         // active la particule
         projectilBalle.SetActive(true);

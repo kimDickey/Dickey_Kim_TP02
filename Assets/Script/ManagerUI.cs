@@ -47,8 +47,8 @@ public class ManagerUI : MonoBehaviour
         // calculer le temps en minutes:secondes
         txtTime.text = timer.ToString(@"mm\:ss\:ff");
         Debug.Log(timer.ToString(@"mm\:ss\:ff"));
-        // afficher l'argent fait dans le text
-        //txtargent.text = .ToString() + "$";
+        // afficher l'argent fait dans le text pi sa marche pas
+        txtargent.text = Player.argent.ToString() + "$";
         txtPointDeVie.text = nbVie.ToString();
     }
     void PauseTime()

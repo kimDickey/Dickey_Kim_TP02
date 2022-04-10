@@ -59,7 +59,7 @@ public class WaveSpanner : MonoBehaviour
     }
     void SpawnEnnemies(GameObject ennemie)
     {
-       
+
     }
 }
    

@@ -5,10 +5,10 @@ using UnityEngine.Animations;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-public class NightShade_Nav : ennemis
+public class NightShade_Nav : Ennemis1
 {
     Animator animatorNightShade;
-    NavMeshAgent agent;
+    
     public bool isFloating;
     NavMeshHit hit;
     public float speed;
@@ -18,17 +18,18 @@ public class NightShade_Nav : ennemis
     public Image barreDeVie;
     bool isDead = false;
     float amount;
-     int valeur = 200;
+    int valeur = 200;
 
-    new void Start()
+    void Start()
     {
-        speed = Startspeed;
-        sante = santeDepart;
+        //speed = Startspeed;
+        //sante = santeDepart;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // sa marche pas a moitiée
         //var navArea= NavMeshHit();
         //agent.SamplePathPosition(-1, 0.0f, out navArea);
         //if (navArea.mask != 1)
@@ -36,9 +37,10 @@ public class NightShade_Nav : ennemis
         //else
             //isFloating = false;
     }
-    void TakeDommage()
+     protected  override void TakeDommage()
     {
         sante -= amount;
+        // pas encore faite la barre de vie ... 
         //barreDeVie.fillAmount = sante / santeDepart;
     }
 
@@ -47,7 +49,7 @@ public class NightShade_Nav : ennemis
         throw new System.NotImplementedException();
     }
 
-     void Die()
+     public  override void Die()
     {
         isDead = true;
         Player.argent += valeur;

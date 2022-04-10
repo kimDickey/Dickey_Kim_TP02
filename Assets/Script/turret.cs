@@ -15,13 +15,13 @@ public abstract class turret : MonoBehaviour
     public int coutBomb = 300;
     public int coutGun = 150;
     public int coutFreeze = 275;
-    private ennemis targetEnemy;
+    private Ennemis1 targetEnemy;
     public string ennemiesTag = "ennemies";
     // Start is called before the first frame update
     void Start()
     {
         float random = Random.Range(1.0f, 2.0f);
-
+        
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public abstract class turret : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
-            targetEnemy = nearestEnemy.GetComponent<ennemis>();
+            targetEnemy = nearestEnemy.GetComponent<Ennemis1>();
         }
         else
         {
